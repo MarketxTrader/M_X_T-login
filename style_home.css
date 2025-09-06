@@ -73,9 +73,9 @@
     }
 
     html,body{height:100%;margin:0;font-family:"Noto Sans Khmer", system-ui, sans-serif;}
-    body{
+    /* body{
       background: url('/image/bg1.jpg') center center / cover no-repeat fixed;
-    }
+    } */
     .topbar{
       position:fixed;
       left:0;
