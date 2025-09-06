@@ -1,0 +1,71 @@
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    body {
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .card {
+      width: 700px;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+      border: 2px solid #0d5edc;
+      overflow: hidden;
+    }
+    .topbar {
+      background: #0d5edc;
+      height: 80px;
+      border-radius: 0 0 40px 40px;
+    }
+    .logo-box { text-align: center; margin-top: -50px; }
+    .logo-box img { width: 120px; }
+    .logo-box h2 { margin-top: 10px; font-size: 20px; color: #333; }
+    .logo-box h1 { font-size: 22px; font-weight: 700; color: #0d5edc; }
+
+    .gold-box {
+      background: #0d5edc;
+      color: white;
+      margin: 20px auto;
+      border-radius: 20px;
+      width: 90%;
+      padding: 20px;
+      text-align: center;
+    }
+    .gold-box h3 { font-size: 20px; margin-bottom: 10px; }
+    .gold-box .date { font-size: 15px; margin-bottom: 5px; }
+    .gold-box .date span { color: #ffc107; font-weight: bold; }
+
+    table { width: 100%; margin-top: 10px; border-collapse: collapse; }
+    td {
+      width: 33%;
+      text-align: center;
+      font-size: 18px;
+      padding: 10px;
+      border-right: 1px solid rgba(255,255,255,0.5);
+    }
+    td:last-child { border-right: none; }
+    td span {
+      display: block;
+      margin-top: 5px;
+      font-weight: bold;
+      color: #ffc107;
+      font-size: 18px;
+    }
+
+    .footer {
+      background: #fff;
+      border-top: 2px solid #0d5edc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 25px;
+      font-size: 14px;
+      color: #0d5edc;
+    }
+    .footer .contact p { margin: 0; }
+    .footer .phone { font-weight: bold; font-size: 18px; }
+    .footer img { width: 60px; height: 60px; }

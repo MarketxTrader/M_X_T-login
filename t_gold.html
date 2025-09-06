@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gold Price Table</title>
+  <link rel="stylesheet" href="style_goldd.css">
+</head>
+<body>
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="/video/bg.mp4" type="video/mp4">
+  </video>
+<button class="btn">
+  <img src="https://img.icons8.com/fluency/48/apple-home.png" alt="home" style="width:20px;height:20px;vertical-align:middle;margin-right:6px;">
+  Home
+</button>
+
+  <div class="card" id="captureCard">
+    <div class="topbar"></div>
+    <div class="logo-box">
+      <img src="/Logo/MT.png" alt="logo">
+      <h2>Good Morning!!</h2>
+      <h1>All Customer</h1>
+    </div>
+
+    <div class="gold-box">
+      <h3>តម្លៃហាងឆេងមាសប្រចាំថ្ងៃ</h3>
+      <div class="date">
+        កាលបរិច្ឆេទ : <span id="date"></span><br>
+        ម៉ោងចេញផ្សាយ : <span id="time-post" class="highlight"></span><br>
+        ម៉ោងបច្ចុប្បន្ន : <span id="time" class="highlight"></span>
+      </div>
+      <table>
+        <tr>
+          <td>១ អោន <br><span id="barPrice">$0</span></td>
+          <td>១ ជី <br><span id="phiPrice">$0</span></td>
+          <td>១ ដំឡឹង <br><span id="nutiemPrice">$0</span></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="footer">
+      <div class="contact">
+        <p>ទំនាក់ទំនងមកយើងខ្ញុំតាមរយៈ</p>
+        <p>លេខទូរស័ព្ទ និង តេលេក្រាម</p>
+        <p></p>
+        <p class="phone">014 993 177</p>
+      </div>
+      <!-- <div class="icon">
+        <img width="68" height="68" src="https://img.icons8.com/3d-fluency/94/telegram.png" alt="telegram"/>
+      </div> -->
+      <img src="/Logo/teleQR.png" alt="qr">
+    </div>
+  </div>
+  </div>
+  <!-- Capture Button -->
+  <div style="text-align:center; margin-top:15px;">
+    <button id="downloadBtn">📸 ទាញយករូបភាព</button>
+  </div>
+
+  <!-- html2canvas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+  <script>
+    // Date & Time
+    function updateDateTime() {
+      const now = new Date();
+      const date = now.toLocaleDateString("en-GB");
+      const time = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+      document.getElementById("date").innerText = date;
+      document.getElementById("time-post").innerText = '9:00 ព្រឹក';
+      document.getElementById("time").innerText = time;
+    }
+    updateDateTime();
+    setInterval(updateDateTime, 60000);
+
+    // Fetch from Google Sheet
+    async function loadGoldPrice() {
+      const url = "https://script.google.com/macros/s/AKfycbxW_WSe6CtMLPzdvgnWe_V_Uy5BLEinCb9OmylVOwfqR61CawoPmF1bmDn-HRVOyy9V/exec";
+      try {
+        const res = await fetch(url);
+        const data = await res.json();
+        document.getElementById("barPrice").innerText = "$ " + data.bar;
+        document.getElementById("phiPrice").innerText = "$ " + data.phi;
+        document.getElementById("nutiemPrice").innerText = "$ " + data.nutiem;
+      } catch (err) {
+        console.error("Error loading data", err);
+      }
+    }
+    loadGoldPrice();
+    setInterval(loadGoldPrice, 60000);
+
+    // Capture & Download
+    document.getElementById("downloadBtn").addEventListener("click", () => {
+      const card = document.getElementById("captureCard");
+      html2canvas(card, { scale: 2 }).then(canvas => {
+        const link = document.createElement("a");
+        link.download = "gold_price.png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+      });
+    });
+    // Example: go to home.html when clicked
+    document.querySelector(".btn").addEventListener("click", function () {
+      window.location.href = "home.html";
+    });
+  </script>
+</body>
+</html>

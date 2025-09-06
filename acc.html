@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Design</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;600;700&display=swap');
+    body {
+      margin: 0;
+      font-family: "Khmer OS Battambang", Arial, sans-serif, "Noto Serif Khmer", "Moul" ;
+      background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?fit=crop&w=1600&q=80') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Background Video */
+    video.bg-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 56.25vw;  /* 16:9 */
+    min-height: 100vh;
+    min-width: 177.78vh;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -1;
+    }
+
+    /* Main Container */
+    .container {
+    width: 420px;
+    height: 620px;
+    margin:auto;
+    background: #ffffffd7;
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    /* border: 3px solid #1a40ff; */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 10;
+    }
+
+
+    .card {
+      background: #ffffffd8;
+      border-radius: 20px;
+      width: 350px;
+      padding: 20px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+      /* border: 3px solid #2b51ff; */
+    }
+
+    .card-header {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .card-header img {
+      width: 70px;
+    }
+
+    h3 {
+      font-size: 17px;
+      margin: 12px 0;
+      color: #222;
+      text-align: center;
+    }
+
+    .form-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .form-list li {
+      background: #f4f4f4;
+      margin: 6px 0;
+      padding: 9px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: Noto Serif Khmer;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+
+    }
+
+    .images {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 12px;
+      box-shadow: 0 6px 5px rgba(0, 0, 0, 0.35);
+    }
+
+    .images img {
+      width: 350px;
+      height: 200px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    /* Button */
+    .flex {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .outer-cont {
+      margin: 15px auto 0;
+      padding: 10px 18px;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      position: relative;
+      background: linear-gradient(90deg, #5bfcc4, #f593e4, #71a4f0);
+      border-radius: 12px;
+      color: #fff;
+      transition: all 0.25s ease;
+      box-shadow:
+        inset 0px 0px 5px #ffffffa9,
+        inset 0px 25px 25px #000,
+        0px 4px 8px #00000099;
+      text-shadow: 1px 1px 1px #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .outer-cont::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      border-radius: 12px;
+      filter: blur(0);
+      z-index: -1;
+      background: conic-gradient(
+        #00000000 80deg,
+        #40baf7,
+        #f34ad7,
+        #5bfcc4,
+        #00000000 280deg
+      );
+      transition: all 0.25s ease;
+    }
+    .outer-cont:hover::before {
+      filter: blur(12px);
+    }
+    .outer-cont:active::before {
+      filter: blur(5px);
+      transform: translateY(1px);
+    }
+    .outer-cont:active {
+      box-shadow:
+        inset 0px 0px 5px #ffffffa9,
+        inset 0px 25px 25px #000;
+      margin-top: 2px;
+    }
+
+    /* Home Button */
+.btn {
+  --main-color: #ffce06;
+  --main-alt-color: #fff696;
+  height: 44px;
+  font-size: 16px !important;
+  line-height: 44px;
+  font-weight: 700;
+  color: #3f5cc3;
+  text-shadow: 0 1px 1px #fff8c4;
+  text-transform: uppercase;
+  text-align: center;
+  box-shadow: rgb(99 121 133 / 14%) 0 0 0 4px;
+  border-radius: 6px;
+  border: none;
+  border-top: 1px solid var(--main-alt-color);
+  border-bottom: 1px solid var(--main-color);
+  background-color: var(--main-color);
+  outline: 0;
+  cursor: pointer;
+  padding: 0 20px;
+  transition: transform .3s ease, background .3s ease;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+}
+
+.btn:hover {
+  border-top-color: var(--main-alt-color);
+  border-bottom-color: var(--main-color);
+  background: linear-gradient(to bottom, #fae811, #f5d604);
+}
+
+.btn:active {
+  transform: scale(0.9);
+}
+  </style>
+</head>
+<body>
+  <!-- Background video -->
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="/video/bg.mp4" type="video/mp4">
+  </video>
+
+  <!-- Home button -->
+  <button class="btn">
+    <img src="https://img.icons8.com/fluency/48/apple-home.png" 
+         alt="home" style="width:20px;height:20px;vertical-align:middle;margin-right:6px;">
+    Home
+  </button>
+
+
+  <div class="card">
+    <div class="card-header">
+      <img src="/Logo/MT.png" alt="Logo">
+    </div>
+
+        <!-- Button -->
+    
+     <a href="https://t.me/vathana_trader" target="_blank" class="outer-cont flex">
+      <svg
+        viewBox="0 0 24 24"
+        height="22"
+        width="22"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g fill="none">
+          <path
+            d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"
+          ></path>
+          <path
+            d="M9.107 5.448c.598-1.75 3.016-1.803 3.725-.159l.06.16l.807 2.36a4 4 0 0 0 2.276 2.411l.217.081l2.36.806c1.75.598 1.803 3.016.16 3.725l-.16.06l-2.36.807a4 4 0 0 0-2.412 2.276l-.081.216l-.806 2.361c-.598 1.75-3.016 1.803-3.724.16l-.062-.16l-.806-2.36a4 4 0 0 0-2.276-2.412l-.216-.081l-2.36-.806c-1.751-.598-1.804-3.016-.16-3.724l.16-.062l2.36-.806A4 4 0 0 0 8.22 8.025l.081-.216zM11 6.094l-.806 2.36a6 6 0 0 1-3.49 3.649l-.25.091l-2.36.806l2.36.806a6 6 0 0 1 3.649 3.49l.091.25l.806 2.36l.806-2.36a6 6 0 0 1 3.49-3.649l.25-.09l2.36-.807l-2.36-.806a6 6 0 0 1-3.649-3.49l-.09-.25zM19 2a1 1 0 0 1 .898.56l.048.117l.35 1.026l1.027.35a1 1 0 0 1 .118 1.845l-.118.048l-1.026.35l-.35 1.027a1 1 0 0 1-1.845.117l-.048-.117l-.35-1.026l-1.027-.35a1 1 0 0 1-.118-1.845l.118-.048l1.026-.35l.35-1.027A1 1 0 0 1 19 2"
+            fill="currentColor"
+          ></path>
+        </g>
+      </svg>
+      ចុចទីនេះដើម្បីទំនាក់ទំនងបើកគណនីត្រេត
+    </a>
+
+    <h4>ដើម្បីបង្កើតគណនីត្រេតបានត្រូវការឯកសារមួយចំនួនដូចខាងក្រោម</h4>
+    <ul class="form-list">
+      <li>១. Gmail</li>
+      <li>២. លេខទូរស័ព្ទ</li>
+      <li>៣. លេខគណនីធនាគារ (ABA / AC)</li>
+      <li>៤. អត្តសញ្ញាណប័ណ្ណ ឬលិខិតឆ្លងដែន</li>
+    </ul>
+
+    <div class="images">
+      <img src="/image/id_card.jpg" alt="ID Card">
+      <img src="/image/passport.jpg" alt="Passport">
+    </div>
+
+  </div>
+</body>
+  <!-- Script -->
+  <script>
+    // go to home.html when clicked
+    document.querySelector(".btn").addEventListener("click", function () {
+      window.location.href = "home.html";
+    });
+  </script>
+</html>

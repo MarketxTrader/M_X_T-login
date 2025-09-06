@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Update Gold Price</title>
+  <style>
+    body{font-family:"Poppins",sans-serif;background:#f8f9ff;display:flex;justify-content:center;align-items:center;height:100vh;}
+    .card{width:400px;padding:20px;background:white;border-radius:15px;box-shadow:0 6px 20px rgba(0,0,0,0.15);text-align:center;}
+    h2{color:#0d5edc;margin-bottom:15px;}
+    label{display:block;margin-top:10px;}
+    input{width:100%;padding:8px;margin-top:5px;border:1px solid #ccc;border-radius:6px;text-align:center;font-size:16px;}
+    button{margin-top:20px;padding:10px 20px;background:#0d5edc;border:none;border-radius:8px;color:white;font-weight:bold;cursor:pointer;}
+    .status{margin-top:15px;font-size:14px;}
+    .hidden{display:none;}
+  </style>
+</head>
+<body>
+  <!-- Login Box -->
+  <div class="card" id="loginBox">
+    <h2>Admin Login</h2>
+    <form id="loginForm">
+      <label>Username</label>
+      <input type="text" id="username" required>
+      <label>Password</label>
+      <input type="password" id="password" required>
+      <button type="submit">Login</button>
+    </form>
+    <div class="status" id="loginStatus"></div>
+  </div>
+
+  <!-- Admin Box -->
+  <div class="card hidden" id="adminBox">
+    <h2>Update Gold Price</h2>
+    <form id="goldForm">
+      <label>១ បារក ($)</label>
+      <input type="number" id="bar" required>
+      <label>១ ភី ($)</label>
+      <input type="number" id="phi" required>
+      <label>១ នុទៀម ($)</label>
+      <input type="number" id="nutiem" required>
+      <button type="submit">Save to Google Sheet</button>
+    </form>
+    <div class="status" id="statusMsg"></div>
+  </div>
+
+  <script>
+    // 🔹 Replace with your WebApp URL
+    const apiUrl="AKfycbxW_WSe6CtMLPzdvgnWe_V_Uy5BLEinCb9OmylVOwfqR61CawoPmF1bmDn-HRVOyy9V";
+
+    // 🔹 Set your login credentials
+    const ADMIN_USER = "admin";
+    const ADMIN_PASS = "12345"; 
+
+    // Login logic
+    document.getElementById("loginForm").addEventListener("submit",(e)=>{
+      e.preventDefault();
+      const user=document.getElementById("username").value;
+      const pass=document.getElementById("password").value;
+
+      if(user===ADMIN_USER && pass===ADMIN_PASS){
+        document.getElementById("loginBox").classList.add("hidden");
+        document.getElementById("adminBox").classList.remove("hidden");
+        loadGoldPrice();
+      }else{
+        document.getElementById("loginStatus").innerText="❌ Invalid Username or Password!";
+      }
+    });
+
+    // Load data from Google Sheet
+    async function loadGoldPrice(){
+      const res=await fetch(apiUrl);
+      const data=await res.json();
+      document.getElementById("bar").value=data.bar;
+      document.getElementById("phi").value=data.phi;
+      document.getElementById("nutiem").value=data.nutiem;
+    }
+
+    // Save new data to Google Sheet
+    document.getElementById("goldForm").addEventListener("submit",async(e)=>{
+      e.preventDefault();
+      const body={
+        bar:document.getElementById("bar").value,
+        phi:document.getElementById("phi").value,
+        nutiem:document.getElementById("nutiem").value
+      };
+      const res=await fetch(apiUrl,{method:"POST",body:JSON.stringify(body),headers:{"Content-Type":"application/json"}});
+      const result=await res.json();
+      document.getElementById("statusMsg").innerText=result.status==="success"?"✅ Updated successfully!":"❌ Error!";
+    });
+  </script>
+</body>
+</html>

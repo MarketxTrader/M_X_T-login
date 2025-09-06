@@ -1,0 +1,280 @@
+body {
+  margin: 60px 10px 10px 10px;
+  /* margin-top: 65px; */
+  font-family: "Khmer OS Battambang", Arial, sans-serif,Noto Serif Khmer, "Moul" ;
+  text-align: center;
+  background: #fff;
+  
+}
+/* Video styling */
+video.bg-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 56.25vw;  /* 16:9 ratio */
+    min-height: 100vh;
+    min-width: 177.78vh;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Fallback image inside video tag */
+video.bg-video .bg-fallback {
+    display: none;
+}
+
+/* Show fallback image on browsers that don't support video */
+video.bg-video:unsupported .bg-fallback {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Mobile devices: ensure full screen */
+@media (max-width: 768px) {
+    video.bg-video {
+        width: 100%;
+        height: 100%;
+        min-width: auto;
+        min-height: auto;
+    }
+}
+
+/* Content overlay */
+.content {
+    position: relative;
+    z-index: 1;
+    color: rgba(255, 255, 255, 0.95);
+    font-family: Poppins, sans-serif;
+    text-align: center;
+    top: 40%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* From Uiverse.io by mrtqzbek11 */
+/* #downloadBtn {
+  width: 165px;
+  height: 62px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 17px;
+  border-radius: 1rem;
+  border: none;
+  position: relative;
+  background: #100720;
+  transition: 0.1s;
+  overflow: hidden;
+}
+
+#downloadBtn::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2%);
+  filter: blur(15px);
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#downloadBtn:active {
+  transform: scale(0.9) rotate(3deg);
+  background: radial-gradient(circle farthest-corner at 10% 20%, rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2%);
+  transition: 0.5s;
+} */
+
+/* Optional: Hover glowing effect */
+/* #downloadBtn:hover::after {
+  filter: blur(25px);
+  transform: scale(1.1);
+  transition: 0.3s;
+} */
+
+
+
+
+
+
+/* =======Picture======== */
+.card {
+  max-width: 400px;
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.topbar {
+  background: #0066cc;
+  height: 70px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.904);
+}
+
+.logo-box img {
+  width: 100px;
+  margin-top: -50px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.logo-box h2 {
+  margin: 0;
+  color: #333;
+}
+.logo-box h1 {
+  margin: 0;
+  font-size: 22px;
+  color: #0066cc;
+  
+}
+
+.gold-box {
+  background: #0066cc;
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 20px;
+  margin: 15px;
+  font-family: Noto Serif Khmer;
+
+}
+.gold-box h3 {
+  margin-top: 0;
+  color: #ffc107;
+  font-family: 'Moul';
+  font-size: 17px;
+}
+.date {
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+.highlight {
+  color: #ffc107;
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+}
+table td {
+  width: 33%;
+}
+/*--------- Price Gold Present -------*/
+#barPrice{
+    color:#ffc107;
+}
+#phiPrice{
+    color:#ffc107;
+}
+#nutiemPrice{
+    color:#ffc107;
+}
+/*--------- Date Present -------*/
+#date{
+    color:#ffc107;
+}
+#time-post{
+    color:#ffc107;
+}
+#time{
+    color:#ffc107;
+}
+
+.footer {
+    margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0066cc;
+  color: #fff;
+  padding: 10px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  font-family: Noto Serif Khmer;
+  box-shadow: 0 -4px 9px rgba(0, 0, 0, 0.904);
+}
+.footer .contact {
+  text-align: left;
+  font-size: 12px;
+}
+.footer .phone {
+  font-size: 16px;
+  font-weight: bold;
+}
+.footer img {
+  width: 70px;
+  border-radius: 10px;
+}
+/* .icon {
+    width: 10px;
+    height: 10px;
+} */
+/* Capture Button */
+#downloadBtn {
+  background: #0080ff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: Noto Serif Khmer;
+  font-size: 15px;
+}
+#downloadBtn:hover {
+  background: #004a99;
+}
+
+ /* From Uiverse.io by SevenAJJY */ 
+    .btn {
+      --main-color: #ffce06;
+      --main-alt-color: #fff696;
+      height: 44px;
+      font-size: 16px !important;
+      line-height: 44px;
+      font-weight: 700;
+      color: #3f5cc3;
+      text-shadow: 0 1px 1px #fff8c4;
+      text-transform: uppercase;
+      text-align: center;
+      -webkit-box-shadow: rgb(99 121 133 / 14%) 0 0 0 4px;
+      box-shadow: rgb(99 121 133 / 14%) 0 0 0 4px;
+      border-radius: 4px;
+      border: none;
+      border-top: 1px solid var(--main-alt-color);
+      border-bottom: 1px solid var(--main-color);
+      background-color: var(--main-color);
+      outline: 0;
+      cursor: pointer;
+      margin: 0 0 5px 4px;
+      padding: 0 20px;
+      transition: transform .3s ease, background .3s ease;
+       position: fixed;
+      top: 10px;    /* distance from top */
+      left: 10px;   /* distance from left */
+      z-index: 1000;
+    }
+
+    .btn:hover {
+      border-top-color: var(--main-alt-color);
+      border-bottom-color: var(--main-color);
+      background: linear-gradient(to bottom, #fae811, #f5d604);
+    }
+
+    .btn:active {
+      transform: scale(0.85);
+    }

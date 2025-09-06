@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Market x Trader</title>
+  <link rel="stylesheet" href="style_admin.css">
+</head>
+<body>
+  <!-- Background video -->
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="/video/bg.mp4" type="video/mp4">
+  </video>
+
+  <!-- Home button -->
+  <button class="btn">
+    <img src="https://img.icons8.com/fluency/48/apple-home.png" 
+         alt="home" style="width:20px;height:20px;vertical-align:middle;margin-right:6px;">
+    Home
+  </button>
+
+  <!-- Main Container -->
+  <div class="container">
+    <div class="logo">
+      <img src="/Logo/MT.png" alt="Market x Trader Logo" width="120">
+    </div>
+    <div class="title">តើអ្នកមានបញ្ហាអ្វីដែរ?</div>
+    <div class="subtitle">
+      សូមទំនាក់ទំនង់តាមរយ:បណ្តាញខាងក្រោមនេះ
+    </div>
+    <div class="subtitle2">
+      ចុចលើប្រអប់ខាងក្រោមដើម្បីទាក់ទង
+    </div>
+
+    <div class="contact-box">
+      <!-- Telegram -->
+      <div class="card telegram">
+        <img src="https://img.icons8.com/color/48/telegram-app.png" alt="Telegram">
+        <a href="https://t.me/vathana_trader" target="_blank">
+          Telegram<br>@vathana_trader
+        </a>
+      </div>
+
+      <!-- Facebook -->
+      <div class="card facebook">
+        <img src="https://img.icons8.com/fluency/48/facebook-new.png" alt="Facebook">
+        <a href="https://web.facebook.com/profile.php?id=100069082561687" target="_blank">
+          Facebook Page<br>Market x Trader
+        </a>
+      </div>
+
+      <!-- Phone -->
+      <div class="card phone">
+        <img src="https://img.icons8.com/fluency/48/phone.png" alt="Phone">
+        <a href="tel:014993177">
+          លេខទូរស័ព្ទ<br>014 993 177
+        </a>
+      </div>
+
+      <!-- TikTok -->
+      <div class="card tiktok">
+        <img src="https://img.icons8.com/fluency/48/tiktok.png" alt="TikTok">
+        <a href="https://tiktok.com/@vathana.trader.com" target="_blank">
+          TikTok<br>@vathana.trader.com
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    // go to home.html when clicked
+    document.querySelector(".btn").addEventListener("click", function () {
+      window.location.href = "home.html";
+    });
+  </script>
+</body>
+</html>
