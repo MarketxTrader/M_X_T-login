@@ -75,18 +75,43 @@
     setInterval(updateDateTime, 60000);
 
     // Fetch from Google Sheet
+    // async function loadGoldPrice() {
+    //   const url = "https://script.google.com/macros/s/AKfycbxW_WSe6CtMLPzdvgnWe_V_Uy5BLEinCb9OmylVOwfqR61CawoPmF1bmDn-HRVOyy9V/exec";
+    //   try {
+    //     const res = await fetch(url);
+    //     const data = await res.json();
+    //     document.getElementById("barPrice").innerText = "$ " + data.bar;
+    //     document.getElementById("phiPrice").innerText = "$ " + data.phi;
+    //     document.getElementById("nutiemPrice").innerText = "$ " + data.nutiem;
+    //   } catch (err) {
+    //     console.error("Error loading data", err);
+    //   }
+    // }
+    function formatValue(value) {
+      if (typeof value === "number") return Math.floor(value); // កាត់ decimal
+      if (typeof value === "string") return value.split(".")[0]; // ប្រសិនជាផ្ញើ string
+      return value;
+    }
+
     async function loadGoldPrice() {
-      const url = "https://script.google.com/macros/s/AKfycbxW_WSe6CtMLPzdvgnWe_V_Uy5BLEinCb9OmylVOwfqR61CawoPmF1bmDn-HRVOyy9V/exec";
+      const url = "https://script.google.com/macros/s/AKfycbxW_WSe6CtMLPzdvgnWe_V_Uy5BLEinCb9OmylVOwfqR61CawoPmF1bmDn-HRVOyy9V/exec"; // ផ្លាស់ទៅ URL របស់ Web App
       try {
         const res = await fetch(url);
         const data = await res.json();
-        document.getElementById("barPrice").innerText = "$ " + data.bar;
-        document.getElementById("phiPrice").innerText = "$ " + data.phi;
-        document.getElementById("nutiemPrice").innerText = "$ " + data.nutiem;
+
+        document.getElementById("barPrice").innerText = "$ " + formatValue(data.bar);
+        document.getElementById("phiPrice").innerText = "$ " + formatValue(data.phi);
+        document.getElementById("nutiemPrice").innerText = "$ " + formatValue(data.nutiem);
       } catch (err) {
         console.error("Error loading data", err);
       }
     }
+
+    // ចាប់ផ្តើម load និង auto-refresh រៀងរាល់ 60 វិនាទី
+    loadGoldPrice();
+    setInterval(loadGoldPrice, 60000);
+
+
     loadGoldPrice();
     setInterval(loadGoldPrice, 60000);
 
