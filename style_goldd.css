@@ -1,4 +1,4 @@
-/* Khmer OS Battambang */
+/* ===== Embed Khmer Fonts ===== */
 @font-face {
   font-family: 'Battambang';
   src: url('fonts/Battambang.woff2') format('woff2'),
@@ -8,7 +8,6 @@
   font-style: normal;
 }
 
-/* Moul */
 @font-face {
   font-family: 'Moul';
   src: url('fonts/Moul.woff2') format('woff2'),
@@ -18,7 +17,6 @@
   font-style: normal;
 }
 
-/* Kantumruy Pro */
 @font-face {
   font-family: 'Kantumruy Pro';
   src: url('fonts/KantumruyPro.woff2') format('woff2'),
@@ -32,11 +30,12 @@
 body {
   margin: 60px 10px 10px 10px;
   /* margin-top: 65px; */
-  font-family: "Khmer OS Battambang", Arial, sans-serif,Noto Serif Khmer, "Moul" , "Kantumruy Pro" ;
+  font-family: 'Battambang', 'Kantumruy Pro', Arial, sans-serif;
   text-align: center;
   background: #fff;
   
 }
+
 /* Video styling */
 video.bg-video {
     position: fixed;
@@ -131,13 +130,14 @@ video.bg-video:unsupported .bg-fallback {
   padding: 15px;
   border-radius: 20px;
   margin: 15px;
-  font-family: "Kantumruy Pro";
+  font-family: 'Kantumruy Pro', sans-serif;
 
 }
+
 .gold-box h3 {
   margin-top: 0;
   color: #ffc107;
-  font-family: 'Moul';
+  font-family: 'Moul', 'Battambang', sans-serif;
   font-size: 20px;
 }
 .date {
