@@ -10,18 +10,18 @@
 
 @font-face {
   font-family: 'Moul';
-  src: url('fonts/Moul.woff2') format('woff2'),
-       url('fonts/Moul.woff') format('woff'),
-       url('fonts/Moul.ttf') format('truetype');
+  src: url('fonts/Moul-Regular.woff2') format('woff2'),
+       url('fonts/Moul-Regular.woff') format('woff'),
+       url('fonts/Moul-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Kantumruy Pro';
-  src: url('fonts/KantumruyPro.woff2') format('woff2'),
-       url('fonts/KantumruyPro.woff') format('woff'),
-       url('fonts/KantumruyPro.ttf') format('truetype');
+  src: url('fonts/KantumruyPro-Medium.woff2') format('woff2'),
+       url('fonts/KantumruyPro-Medium.woff') format('woff'),
+       url('fonts/KantumruyPro-Medium.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -130,14 +130,14 @@ video.bg-video:unsupported .bg-fallback {
   padding: 15px;
   border-radius: 20px;
   margin: 15px;
-  font-family: 'Kantumruy Pro', sans-serif;
+  font-family: 'Kantumruy Pro';
 
 }
 
 .gold-box h3 {
   margin-top: 0;
   color: #ffc107;
-  font-family: 'Moul', 'Battambang', sans-serif;
+  font-family: 'Moul';
   font-size: 20px;
 }
 .date {
@@ -189,7 +189,7 @@ table td {
   padding: 10px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  font-family: "Kantumruy Pro";
+  font-family: 'Kantumruy Pro';
   box-shadow: 0 -4px 9px rgba(0, 0, 0, 0.904);
 }
 .footer .contact {
@@ -218,7 +218,7 @@ table td {
   font-size: 16px;
   cursor: pointer;
   transition: 0.3s;
-  font-family: Noto Serif Khmer;
+  font-family: 'Kantumruy Pro';
   font-size: 15px;
 }
 #downloadBtn:hover {
