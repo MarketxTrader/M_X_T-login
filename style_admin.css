@@ -1,4 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;600;700&display=swap');
+
+/* ===== Embed Khmer Fonts ===== */
+@font-face {
+  font-family: 'Battambang';
+  src: url('fonts/Battambang.woff2') format('woff2'),
+       url('fonts/Battambang.woff') format('woff'),
+       url('fonts/Battambang.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Moul';
+  src: url('fonts/Moul-Regular.woff2') format('woff2'),
+       url('fonts/Moul-Regular.woff') format('woff'),
+       url('fonts/Moul-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Kantumruy Pro';
+  src: url('fonts/KantumruyPro-Medium.woff2') format('woff2'),
+       url('fonts/KantumruyPro-Medium.woff') format('woff'),
+       url('fonts/KantumruyPro-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 /* Reset */
 * {
   margin: 0;
@@ -7,7 +37,7 @@
 }
 
 body {
-  font-family: "Khmer OS Battambang", Arial, sans-serif, "Noto Serif Khmer", "Moul" ;
+  font-family: "Khmer OS Battambang", Arial, sans-serif, 'Kantumruy Pro', 'Moul' ;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,14 +107,14 @@ video.bg-video {
   font-size: 20px;
   margin-bottom: 20px;
   line-height: 1.5;
-  font-family: Noto Serif Khmer;
+  font-family: 'Kantumruy Pro';
 }
 .subtitle2{
     color: #0400ff;
   font-size: 18px;
   margin-bottom: 20px;
   line-height: 1.5;
-  font-family: Noto Serif Khmer;
+  font-family: 'Kantumruy Pro';
 }
 
 /* Contact Box */
