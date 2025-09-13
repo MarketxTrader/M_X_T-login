@@ -1,7 +1,7 @@
 body {
   margin: 60px 10px 10px 10px;
   /* margin-top: 65px; */
-  font-family: "Khmer OS Battambang", Arial, sans-serif,Noto Serif Khmer, "Moul" ;
+  font-family: "Khmer OS Battambang", Arial, sans-serif,Noto Serif Khmer, "Moul" , "Kantumruy Pro" ;
   text-align: center;
   background: #fff;
   
@@ -130,7 +130,7 @@ video.bg-video:unsupported .bg-fallback {
 }
 .logo-box h2 {
   margin: 0;
-  color: #333;
+  color: #000000;
 }
 .logo-box h1 {
   margin: 0;
@@ -145,18 +145,18 @@ video.bg-video:unsupported .bg-fallback {
   padding: 15px;
   border-radius: 20px;
   margin: 15px;
-  font-family: Noto Serif Khmer;
+  font-family: "Kantumruy Pro";
 
 }
 .gold-box h3 {
   margin-top: 0;
   color: #ffc107;
   font-family: 'Moul';
-  font-size: 17px;
+  font-size: 20px;
 }
 .date {
   margin-bottom: 30px;
-  font-size: 14px;
+  font-size: 20px;
 }
 .highlight {
   color: #ffc107;
@@ -203,15 +203,15 @@ table td {
   padding: 10px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  font-family: Noto Serif Khmer;
+  font-family: "Kantumruy Pro";
   box-shadow: 0 -4px 9px rgba(0, 0, 0, 0.904);
 }
 .footer .contact {
   text-align: left;
-  font-size: 12px;
+  font-size: 15px;
 }
 .footer .phone {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
 }
 .footer img {
@@ -224,8 +224,8 @@ table td {
 } */
 /* Capture Button */
 #downloadBtn {
-  background: #0080ff;
-  color: #fff;
+  background: #ffce06;
+  color: #000000;
   border: none;
   padding: 10px 20px;
   border-radius: 10px;
