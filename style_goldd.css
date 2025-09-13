@@ -1,3 +1,34 @@
+/* Khmer OS Battambang */
+@font-face {
+  font-family: 'Battambang';
+  src: url('fonts/Battambang.woff2') format('woff2'),
+       url('fonts/Battambang.woff') format('woff'),
+       url('fonts/Battambang.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Moul */
+@font-face {
+  font-family: 'Moul';
+  src: url('fonts/Moul.woff2') format('woff2'),
+       url('fonts/Moul.woff') format('woff'),
+       url('fonts/Moul.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Kantumruy Pro */
+@font-face {
+  font-family: 'Kantumruy Pro';
+  src: url('fonts/KantumruyPro.woff2') format('woff2'),
+       url('fonts/KantumruyPro.woff') format('woff'),
+       url('fonts/KantumruyPro.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 body {
   margin: 60px 10px 10px 10px;
   /* margin-top: 65px; */
@@ -57,51 +88,6 @@ video.bg-video:unsupported .bg-fallback {
     top: 40%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
-
-/* From Uiverse.io by mrtqzbek11 */
-/* #downloadBtn {
-  width: 165px;
-  height: 62px;
-  cursor: pointer;
-  color: #fff;
-  font-size: 17px;
-  border-radius: 1rem;
-  border: none;
-  position: relative;
-  background: #100720;
-  transition: 0.1s;
-  overflow: hidden;
-}
-
-#downloadBtn::after {
-  content: '';
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2%);
-  filter: blur(15px);
-  z-index: -1;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-#downloadBtn:active {
-  transform: scale(0.9) rotate(3deg);
-  background: radial-gradient(circle farthest-corner at 10% 20%, rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2%);
-  transition: 0.5s;
-} */
-
-/* Optional: Hover glowing effect */
-/* #downloadBtn:hover::after {
-  filter: blur(25px);
-  transform: scale(1.1);
-  transition: 0.3s;
-} */
-
-
-
-
-
 
 /* =======Picture======== */
 .card {
